@@ -31,7 +31,8 @@ namespace MovieResources.Helpers
 
                 _db.tbl_Discovery.InsertOnSubmit(disc);
                 _db.SubmitChanges();
-                _db.SetDiscTime(guid);
+                //DEBUG 20231022
+                //_db.SetDiscTime(guid);
 
                 return disc.disc_Id;
             }

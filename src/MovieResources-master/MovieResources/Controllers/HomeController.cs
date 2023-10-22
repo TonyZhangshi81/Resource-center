@@ -1,7 +1,11 @@
 ﻿using MovieResources.Helpers;
 using MovieResources.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Reflection;
+using System.Text;
 using System.Web.Mvc;
 
 namespace MovieResources.Controllers
@@ -31,7 +35,8 @@ namespace MovieResources.Controllers
                 model.Discovery.Movie.IsFavor = MarkManager.Validate(model.Discovery.Movie.Id, AccountManager.GetId(User.Identity.Name), 3);
             }
 
-            var newmovie = _db.tbl_Movie.Where(m => m.movie_Status == 2).OrderByDescending(m => m.movie_Time).ToList().Take(20);
+            //DEBUG 20231022
+            var newmovie = _db.tbl_Movie.Where(m => m.movie_Status == 1).OrderByDescending(m => m.movie_Time).ToList().Take(20);
             model.News = new List<MovieListViewModel>();
             foreach (var item in newmovie)
             {

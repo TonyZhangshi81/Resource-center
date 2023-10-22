@@ -36,7 +36,8 @@ namespace MovieResources.Helpers
 
                 _db.tbl_Album.InsertOnSubmit(album);
                 _db.SubmitChanges();
-                _db.SetAlbumTime(guid);
+                //DEBUG 20231022
+                //_db.SetAlbumTime(guid);
 
                 return album.album_Id;
             }

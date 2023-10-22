@@ -202,7 +202,8 @@ namespace MovieResources.Helpers
 
                 _db.tbl_Movie.InsertOnSubmit(createMovie);
                 _db.SubmitChanges();
-                _db.SetMovieTime(guid);
+                //DEBUG 20231022
+                //_db.SetMovieTime(guid);
 
                 return createMovie.movie_Id;
             }
@@ -263,7 +264,7 @@ namespace MovieResources.Helpers
                 };
                 _db.tbl_Movie.InsertOnSubmit(createMovie);
                 _db.SubmitChanges();
-                _db.SetMovieTime(guid);
+                //_db.SetMovieTime(guid);
 
                 return createMovie.movie_Id;
             }

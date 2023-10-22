@@ -32,7 +32,8 @@ namespace MovieResources.Helpers
 
                 _db.tbl_Comment.InsertOnSubmit(cmt);
                 _db.SubmitChanges();
-                _db.SetCmtTime(guid);
+                //DEBUG 20231022
+                //_db.SetCmtTime(guid);
 
                 return cmt.cmt_Id;
             }

@@ -53,7 +53,8 @@ namespace MovieResources.Areas.Manage.Controllers
             List<ManageMovieViewModel> movies = new List<ManageMovieViewModel>();
             foreach (var item in query)
             {
-                if (!(bool)_db.tbl_UserAccount.SingleOrDefault(u => u.user_Id == item.movie_Create).user_IsAdmin)
+                //DEBUG 20231022
+                //if (!(bool)_db.tbl_UserAccount.SingleOrDefault(u => u.user_Id == item.movie_Create).user_IsAdmin)
                 {
                     movies.Add(new ManageMovieViewModel(item));
                 }

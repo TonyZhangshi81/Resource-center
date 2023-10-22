@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace MovieResources.Helpers
@@ -17,6 +18,22 @@ namespace MovieResources.Helpers
             try
             {
                 WebClient myWebClient = new WebClient();
+
+                //DEBUG 20231022 begin
+                myWebClient.Encoding = Encoding.UTF8;
+                myWebClient.Headers.Add(HttpRequestHeader.Accept, "*/*");
+                myWebClient.Headers.Add(HttpRequestHeader.Accept, "gzip, deflate");
+                myWebClient.Headers.Add(HttpRequestHeader.Accept, "zh-cn");
+                myWebClient.Headers.Add(HttpRequestHeader.Accept, "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36");
+
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
+
+                //Encoding enc = Encoding.GetEncoding("UTF-8");
+                //Byte[] pageData = myWebClient.DownloadData(url);
+                //string re = enc.GetString(pageData);
+
+                //url += "?apikey=0df993c66c0c636e29ecbb5344252a4a";
+                //DEBUG 20231022 end
                 Stream myStream = myWebClient.OpenRead(url);
                 StreamReader sr = new StreamReader(myStream, System.Text.Encoding.GetEncoding("utf-8"));
                 string strJson = sr.ReadToEnd();

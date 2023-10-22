@@ -83,7 +83,8 @@ namespace MovieResources.Helpers
                     addAccount.user_Cover = "Cover_1.jpg";
                     _db.tbl_UserAccount.InsertOnSubmit(addAccount);
                     _db.SubmitChanges();
-                    _db.SetUserTime(guid);
+                    //DEBUG 20231022
+                    //_db.SetUserTime(guid);
                     return new RequestResult() { Succeeded = true };
                 }
             }
@@ -117,7 +118,7 @@ namespace MovieResources.Helpers
                     var newAccount = _db.tbl_UserAccount.SingleOrDefault(p => p.user_Account == account);
                     newAccount.user_Password = newpassword;
                     _db.SubmitChanges();
-                    _db.AlterUserAlterTime(newAccount.user_Id);
+                    //_db.AlterUserAlterTime(newAccount.user_Id);
                     return new RequestResult() { Succeeded = true, Error = "密码 更改成功" };
                 }
             }
@@ -189,7 +190,7 @@ namespace MovieResources.Helpers
                 if (hasModified)
                 {
                     _db.SubmitChanges();
-                    _db.AlterUserAlterTime(account.user_Id);
+                    //_db.AlterUserAlterTime(account.user_Id);
                     return new RequestResult() { Succeeded = true };
                 }
                 else
@@ -220,7 +221,7 @@ namespace MovieResources.Helpers
                 if (hasModified)
                 {
                     _db.SubmitChanges();
-                    _db.AlterUserAlterTime(account.user_Id);
+                    //_db.AlterUserAlterTime(account.user_Id);
                     return new RequestResult() { Succeeded = true };
                 }
                 else

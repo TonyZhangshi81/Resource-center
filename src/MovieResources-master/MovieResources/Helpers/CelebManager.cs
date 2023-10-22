@@ -163,7 +163,8 @@ namespace MovieResources.Helpers
 
                 _db.tbl_Celebrity.InsertOnSubmit(createCeleb);
                 _db.SubmitChanges();
-                _db.SetCelebTime(guid);
+                //DEBUG 20231022
+                //_db.SetCelebTime(guid);
 
                 if (!string.IsNullOrEmpty(createCeleb.celeb_DoubanID))
                 {
@@ -212,7 +213,7 @@ namespace MovieResources.Helpers
                 };
                 _db.tbl_Celebrity.InsertOnSubmit(createCeleb);
                 _db.SubmitChanges();
-                _db.SetCelebTime(guid);
+                //_db.SetCelebTime(guid);
 
                 return createCeleb.celeb_Id;
             }

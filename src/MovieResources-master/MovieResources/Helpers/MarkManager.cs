@@ -58,7 +58,8 @@ namespace MovieResources.Helpers
 
                 _db.tbl_Mark.InsertOnSubmit(mark);
                 _db.SubmitChanges();
-                _db.SetMarkMovieTime(mark.mark_Id);
+                //DEBUG 20231022
+                //_db.SetMarkMovieTime(mark.mark_Id);
             }
         }
 

@@ -34,7 +34,8 @@ namespace MovieResources.Helpers
 
                 _db.tbl_Ask.InsertOnSubmit(ask);
                 _db.SubmitChanges();
-                _db.SetAskTime(guid);
+                //DEBUG 20231022
+                //_db.SetAskTime(guid);
             }
         }
 

@@ -102,7 +102,10 @@ namespace MovieResources.Controllers
                 {
                     continue;
                 }
-                JObject json = HtmlDecoder.GetJson("https://api.douban.com/v2/movie/subject/" + item.Replace("https://movie.douban.com/subject/", "").Replace("/", ""));
+                //DEBUG 20231022
+                //JObject json = HtmlDecoder.GetJson("https://api.douban.com/v2/movie/subject/" + item.Replace("https://movie.douban.com/subject/", "").Replace("/", ""));
+                //JObject json = HtmlDecoder.GetJson("https://api.wmdb.tv/movie/api?id=" + item);
+                JObject json = HtmlDecoder.GetJson("https://movie.querydata.org/api?id=" + item);
                 JToken msg;
                 if (json.TryGetValue("msg", out msg))
                 {
